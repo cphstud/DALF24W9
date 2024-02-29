@@ -48,3 +48,13 @@ is_opponent_inside_triangle <- function(o_x, o_y,shooter_x,shooter_y) {
   diff=trisum - total_area < 0.1
   return(diff)
 }
+
+plotSingleShotTri <-  function(shot) {
+  g1=c(120, 36)
+  g2=c(120,44)
+  x=c(shot[1],g1[1],g2[1],shot[1])
+  y=c(shot[2],g1[2],g2[2],shot[2])
+  resshot=data.frame(x,y)
+  colnames(resshot)=c("sx","sy")
+  return(resshot)
+}
