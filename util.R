@@ -12,22 +12,22 @@ library(mongolite)
 conm <- mongo(
   db="sbfem25",
   collection = "matches",
-  url = "mongodb://localhost"
+  url = "mongodb://www.talmedos.com:27017"
 )
 conl <- mongo(
   db="sbfem25",
   collection = "lineups",
-  url = "mongodb://localhost"
+  url = "mongodb://www.talmedos.com:27017"
 )
 conev <- mongo(
   db="sbfem25",
   collection = "events",
-  url = "mongodb://localhost"
+  url = "mongodb://www.talmedos.com:27017"
 )
 conmev <- mongo(
   db="sbfem25",
   collection = "maleevents",
-  url = "mongodb://localhost"
+  url = "mongodb://www.talmedos.com:27017"
 )
 
 #q='{"matchId":{"$in":[3906390,3893806,3893822,3906389]}}'
