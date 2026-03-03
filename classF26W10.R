@@ -8,6 +8,7 @@ source("util.R")
 
 dfMatch=fromJSON("3893795.json", flatten = T)
 dfShots=dfMatch %>% filter(type.name=="Shot")
+dfShotV=readRDS("shotvector.rds")
 
 dfShots=dfShots %>% select(dfShotV)
 
@@ -60,7 +61,7 @@ phff$oy=unlist(lapply(phff$location, function(x) x[2]))
 
 phff$shx=onShot$shx
 phff$shy=onShot$shy
-phff$shootername=onShot$player.name
+#phff$shootername=onShot$player.name
 
 # plot freezeframe
 ggplot() +
