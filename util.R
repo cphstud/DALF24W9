@@ -27,6 +27,7 @@ conev <- mongo(
 conmev <- mongo(
   db="sbfem25",
   collection = "maleevents",
+  #url = "mongodb://localhost:27017"
   url = "mongodb://www.talmedos.com:27017"
 )
 
@@ -70,12 +71,13 @@ getAllEventsMultipleMatches<- function(matchidList, gender="f") {
 }
 
 getAllEvents <- function(matchid, gender="f") {
-#  matchid=as.integer(3893795)
-  query=paste0('{"match_id":',matchid,'}')
+  matchid=as.integer(3753983)
   query
   if (gender == "f" ) {
+    query=paste0('{"match_id":',matchid,'}')
     allEv=conev$find(query = query)
   } else {
+    query=paste0('{"matchId":',matchid,'}')
     allEv=conmev$find(query = query)
   }
   retval=jsonlite::flatten(allEv)
