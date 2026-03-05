@@ -12,23 +12,26 @@ library(mongolite)
 conm <- mongo(
   db="sbfem25",
   collection = "matches",
-  url = "mongodb://www.talmedos.com:27017"
+  #url = "mongodb://www.talmedos.com:27017"
+  url = "mongodb://localhost:27017"
 )
 conl <- mongo(
   db="sbfem25",
   collection = "lineups",
-  url = "mongodb://www.talmedos.com:27017"
+  #url = "mongodb://www.talmedos.com:27017"
+  url = "mongodb://localhost:27017"
 )
 conev <- mongo(
   db="sbfem25",
   collection = "events",
-  url = "mongodb://www.talmedos.com:27017"
+  #url = "mongodb://www.talmedos.com:27017"
+  url = "mongodb://localhost:27017"
 )
 conmev <- mongo(
   db="sbfem25",
   collection = "maleevents",
   #url = "mongodb://localhost:27017"
-  url = "mongodb://www.talmedos.com:27017"
+  url = "mongodb://localhost:27017"
 )
 
 #q='{"matchId":{"$in":[3906390,3893806,3893822,3906389]}}'
@@ -57,7 +60,7 @@ getLineupsMultipleMatches<- function(teamids) {
 
 getAllEventsMultipleMatches<- function(matchidList, gender="f") {
   #query=paste0('{"match_id":',matchid,'}')
-  matchidList=vmids[1:3]
+  #matchidList=vmids[1:3]
   query = jsonlite::toJSON(list(`match_id` = list(`$in` = matchidList)), auto_unbox = TRUE)
   query
   #query = jsonlite::toJSON(list(matchId = list(`$in` = matchidList)), auto_unbox = TRUE)
